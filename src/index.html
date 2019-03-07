@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>WG Forge Test</title>
+    <title>WG Forge - Tretyakov</title>
 </head>
+
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <table>
+            <thead>
+                <tr class="search-section">
+                    <th>Search:</th>
+                    <th><input type="text" id="search" placeholder="Tap order(s) info to find"></th>
+                </tr>
+                <tr>
+                    <th data-type='string' class="clickable">Transaction ID <span class="hide">&#8595;</span></th>
+                    <th data-type='customString' class="clickable">User Info<span class="hide">&#8595;</span></th>
+                    <th data-type="number" class="clickable">Order Date <span class="hide">&#8595;</span></th>
+                    <th data-type='number' class="clickable">Order Amount<span class="hide">&#8595;</span></th>
+                    <th>Card Number</th>
+                    <th data-type='string' class="clickable">Card Type<span class="hide">&#8595;</span></th>
+                    <th data-type='string' class="clickable">Location<span class="hide">&#8595;</span></th>
+                </tr>
+            </thead>
+            <tbody id="orders">
+            </tbody>
+        </table>
+        <table id='statistic-orders'></table>
+    </div>
+    <style>
+        table {
+            border-spacing: 0px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        td {
+            border: 1px solid black;
+        }
+        th {
+            border: 1px solid black;
+        }
+        .hide {
+            display: none;
+        }
+        .clickable {
+            cursor: pointer;
+        }
+        .user-link {
+            font-style: italic;
+            text-decoration: none;
+        }
+        thead span {
+            font-weight: bold;
+            color: blue;
+        }
+        #statistic-orders {
+            border: 3px dashed blue;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .highlight {
+            color: green;
+        }
+        .search-section th {
+            border-bottom: 5px solid blueviolet;
+        }
+        .user-link:hover {
+            font-size: 16px;
+            color: blueviolet;
+            font-weight: bold;
+        }
+        .clickable:hover {
+            font-size: 16px;
+            text-shadow: 1px 1px 2px black, 0 0 1em red;
+        }
+    </style>
+    <script src="app.js"></script>
 </body>
+
 </html>
